@@ -1,0 +1,29 @@
+The Sakila_New_LinkedIn_201908.Zip file contains the dump of data that is used in the LinkedIn Learning course "Getting Started with MySQL 8".
+It is used in all the demos and exercises.
+
+How to restore the database:
+----------------------------
+1. Download Sakila_New_LinkedIn_201908.Zip to your computer and extract its contents.
+The Zip file contains the following files:
+-> 1_dump-sakila_new.sql
+-> 2_dump-sakila_new-inventory.sql
+-> 3_dump-sakila_new-rentals.sql
+-> 4_dump-sakila_new-payments.sql
+NOTE: The last 3 large tables were separated into their own files for client tool restore speed and stability.
+
+2. Restore each file in order of enumeration using the MySQL client.
+* The dump files were created using the MySQLDump utility. See https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html
+For instructions on how to use the MySQL client see https://dev.mysql.com/doc/refman/8.0/en/mysql.html
+For instructions on how to restore MySQL Dumps see https://dev.mysql.com/doc/refman/8.0/en/reloading-sql-format-dumps.html
+
+Restore Example:
+----------------
+*Launch MySQL client*
+mysql> CREATE DATABASE sakila_new;
+mysql> USE sakila_new;
+mysql> source 1_dump-sakila_new.sql;
+mysql> source 2_dump-sakila_new-inventory.sql;
+mysql> source 3_dump-sakila_new-rentals.sql;
+mysql> source 4_dump-sakila_new-payments.sql;
+
+--------------------------------------------------
